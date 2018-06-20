@@ -48,7 +48,7 @@ def translate_task(contest: str, contest_number: int, task: str) -> str:
 def compose_url(contest: str, contest_number: int, task: str) -> str:
     host = 'https://beta.atcoder.jp/'
     return host + 'contests/' + contest.lower()\
-            + '{:03d}'.format(contest_number)\
-            + '/tasks/' + contest.lower()\
-            + '{:03d}'.format(contest_number)\
-            + '_' + task
+                + '{:03d}'.format(contest_number)\
+                + '/tasks/' + contest.lower()\
+                + '{:03d}'.format(contest_number)\
+                + '_' + task
