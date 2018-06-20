@@ -37,9 +37,12 @@ def translate_task(contest: str, contest_number: int, task: str) -> str:
         else:
             return task.lower()
     elif contest == 'ARC':
-        pass
-    elif contest == 'AGC':
-        pass
+        if 1 <= contest_number <= 34:
+            return translator[task]
+        else:
+            return task.lower()
+    else:
+        return task.lower()
 
 
 def compose_url(contest: str, contest_number: int, task: str) -> str:
