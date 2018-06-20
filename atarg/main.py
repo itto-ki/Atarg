@@ -27,10 +27,11 @@ def main():
     args = parse_arguments()
     task = parse_html.translate_task(args.contest, args.number, args.task)
     url = parse_html.compose_url(args.contest, args.number, task)
-    inouts = parse_html.fetch_input_and_output(url, args.contest, args.number)
-    in_list = inouts[::2]
-    out_list = inouts[1::2]
-    execute.run_tests(in_list, out_list, args.command)
+    inputs_and_outputs = parse_html\
+        .fetch_inputs_and_outputs(url, args.contest, args.number)
+    inputs = inputs_and_outputs[::2]
+    outputs = inputs_and_outputs[1::2]
+    execute.run_tests(inputs, outputs, args.command)
 
 
 if __name__ == '__main__':

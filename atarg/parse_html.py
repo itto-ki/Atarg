@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 
 
-def fetch_input_and_output(
+def fetch_inputs_and_outputs(
         url: str,
         contest: str,
         contest_number: int) -> [str]:
