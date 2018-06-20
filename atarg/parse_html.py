@@ -2,7 +2,10 @@ import requests
 from bs4 import BeautifulSoup
 
 
-def get_inouts(url: str, contest: str, contest_number: int) -> [str]:
+def fetch_input_and_output(
+        url: str,
+        contest: str,
+        contest_number: int) -> [str]:
     r = requests.get(url)
     soup = BeautifulSoup(r.content, 'html.parser')
     pre_list = soup.find_all('pre')

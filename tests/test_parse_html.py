@@ -3,14 +3,14 @@ from atarg import parse_html
 
 
 class HTMLParserTest(unittest.TestCase):
-    def test_get_inouts(self):
+    def test_fetch_input_and_output(self):
         self.assertEqual(
-                parse_html.get_inouts(
+                parse_html.fetch_input_and_output(
                     'https://beta.atcoder.jp/contests/abc020/tasks/abc020_a',
                     'ABC', 20),
                 ['1', 'ABC', '2', 'chokudai'])
         self.assertEqual(
-                parse_html.get_inouts(
+                parse_html.fetch_input_and_output(
                     'https://beta.atcoder.jp/contests/abc001/tasks/abc001_1',
                     'ABC', 1),
                 ['15\r\n10', '5', '0\r\n0', '0', '5\r\n20', '-15'])
