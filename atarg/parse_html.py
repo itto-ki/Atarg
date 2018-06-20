@@ -1,3 +1,5 @@
+from typing import List
+
 import requests
 from bs4 import BeautifulSoup
 
@@ -5,7 +7,7 @@ from bs4 import BeautifulSoup
 def fetch_inputs_and_outputs(
         url: str,
         contest: str,
-        contest_number: int) -> [str]:
+        contest_number: int) -> List[str]:
     def get_text(html):
         return list(map(lambda tag: tag.get_text().strip(), html))
 
