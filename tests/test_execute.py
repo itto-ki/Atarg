@@ -7,11 +7,6 @@ class ExecutorTest(unittest.TestCase):
         self.assertEqual(
                 execute.run_test('15\r\n10', '5', 'tests/A'), ('5', True))
         self.assertEqual(
-                execute.run_test('0\r\n0', '0', 'tests/A'), ('0', True))
-        self.assertEqual(
-                execute.run_test('5\r\n20', '-15', 'tests/A'),
-                ('-15', True))
-        self.assertEqual(
                 execute.run_test('15\r\n14', '-15', 'tests/A'),
                 ('1', False))
 

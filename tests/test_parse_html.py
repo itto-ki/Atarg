@@ -40,9 +40,6 @@ class HTMLParserTest(unittest.TestCase):
 
     def test_compose_url(self):
         self.assertEqual(
-                parse_html.compose_url('ABC', 19, '1'),
-                'https://beta.atcoder.jp/contests/abc019/tasks/abc019_1')
-        self.assertEqual(
                 parse_html.compose_url('ABC', 20, 'a'),
                 'https://beta.atcoder.jp/contests/abc020/tasks/abc020_a')
 
