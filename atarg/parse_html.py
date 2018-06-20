@@ -12,8 +12,8 @@ def fetch_input_and_output(
     def split_half(lst):
         return lst[:int(len(lst)/2)]
 
-    r = requests.get(url)
-    soup = BeautifulSoup(r.content, 'html.parser')
+    response = requests.get(url)
+    soup = BeautifulSoup(response.content, 'html.parser')
     pre_list = soup.find_all('pre')
     if contest == 'ABC':
         if 1 <= contest_number <= 41:
