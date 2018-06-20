@@ -6,22 +6,27 @@ def fetch_input_and_output(
         url: str,
         contest: str,
         contest_number: int) -> [str]:
+    def get_text(html):
+        return list(map(lambda tag: tag.get_text().strip(), html))
+
+    def split_half(lst):
+        return lst[:int(len(lst)/2)]
+
     r = requests.get(url)
     soup = BeautifulSoup(r.content, 'html.parser')
     pre_list = soup.find_all('pre')
-    contest_number = contest_number
-    inouts = list(map(
-        lambda tag: tag.get_text().strip(),
-        pre_list[1:]))    # 入力例は除外する
     if contest == 'ABC':
         if 1 <= contest_number <= 41:
-            return inouts
+            return get_text(pre_list[1:])
         else:
-            return inouts[:int(len(inouts)/2)]
+            return split_half(get_text(pre_list))[1:]
     elif contest == 'ARC':
-        pass
+        if 1 <= contest_number <= 57:
+            return get_text(pre_list[1:])
+        else:
+            return split_half(get_text(pre_list))[1:]
     elif contest == 'AGC':
-        pass
+        return split_half(get_text(pre_list))[1:]
 
 
 def translate_task(contest: str, contest_number: int, task: str) -> str:
