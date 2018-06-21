@@ -7,7 +7,7 @@ from bs4 import BeautifulSoup
 def fetch_inputs_and_outputs(
         url: str,
         contest: str,
-        contest_number: int) -> List[str]:
+        contest_no: int) -> List[str]:
     def get_text(html):
         return list(map(lambda tag: tag.get_text().strip(), html))
 
@@ -18,12 +18,12 @@ def fetch_inputs_and_outputs(
     soup = BeautifulSoup(response.content, 'html.parser')
     pre_list = soup.find_all('pre')
     if contest == 'ABC':
-        if 1 <= contest_number <= 41:
+        if 1 <= contest_no <= 41:
             return get_text(pre_list[1:])
         else:
             return split_half(get_text(pre_list))[1:]
     elif contest == 'ARC':
-        if 1 <= contest_number <= 57:
+        if 1 <= contest_no <= 57:
             return get_text(pre_list[1:])
         else:
             return split_half(get_text(pre_list))[1:]
@@ -31,15 +31,15 @@ def fetch_inputs_and_outputs(
         return split_half(get_text(pre_list))[1:]
 
 
-def translate_task(contest: str, contest_number: int, task: str) -> str:
+def translate_task(contest: str, contest_no: int, task: str) -> str:
     translator = {'A': '1', 'B': '2', 'C': '3', 'D': '4'}
     if contest == 'ABC':
-        if 1 <= contest_number <= 19:
+        if 1 <= contest_no <= 19:
             return translator[task]
         else:
             return task.lower()
     elif contest == 'ARC':
-        if 1 <= contest_number <= 34:
+        if 1 <= contest_no <= 34:
             return translator[task]
         else:
             return task.lower()
@@ -47,10 +47,10 @@ def translate_task(contest: str, contest_number: int, task: str) -> str:
         return task.lower()
 
 
-def compose_url(contest: str, contest_number: int, task: str) -> str:
+def compose_url(contest: str, contest_no: int, task: str) -> str:
     host = 'https://beta.atcoder.jp/'
     return host + 'contests/' + contest.lower()\
-                + '{:03d}'.format(contest_number)\
+                + '{:03d}'.format(contest_no)\
                 + '/tasks/' + contest.lower()\
-                + '{:03d}'.format(contest_number)\
+                + '{:03d}'.format(contest_no)\
                 + '_' + task
