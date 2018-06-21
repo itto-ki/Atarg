@@ -8,7 +8,7 @@ def parse_arguments():
     CONTESTS = ['ABC', 'ARC', 'AGC']
     TASKS = ['A', 'B', 'C', 'D']
     parser = argparse.ArgumentParser(
-            prog='Atcoder Auto Tester',
+            prog='atarg',
             description='Testing tool before submit for atcoder',
             epilog='end',
             add_help=True,
