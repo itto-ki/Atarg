@@ -11,7 +11,7 @@ setup(
         author_email='kimura.itto.kd3@gmail.com',
         url='https://github.com/itto-ki/Atarg/',
         license='MIT',
-        install_requests=[
+        install_requires=[
             'requests',
             'beautifulsoup4'
             ],
