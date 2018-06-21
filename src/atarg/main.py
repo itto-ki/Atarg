@@ -1,7 +1,7 @@
 import argparse
 
-import parse_html
-import execute
+from atarg import parse_html
+from atarg import execute
 
 
 def parse_arguments():
