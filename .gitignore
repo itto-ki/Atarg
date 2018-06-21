@@ -3,3 +3,4 @@ Pipfile
 Pipfile.lock
 build
 dist
+src/atarg.egg-info/*
