@@ -19,4 +19,13 @@ setup(
         packages=find_packages(where='src', exclude=('tests')),
         scripts=['scripts/atarg'],
         test_suite='tests',
-        )
+        classifiers=[
+                    'Development Status :: 4 - Beta',
+                    'Environment :: Console',
+                    'License :: OSI Approved :: MIT License',
+                    'Programming Language :: Python :: 3',
+                    'Topic :: Internet :: WWW/HTTP',
+                    'Topic :: Software Development',
+                    'Topic :: Utilities',
+        ],
+    )
