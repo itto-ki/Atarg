@@ -1,5 +1,5 @@
 import unittest
-from atarg import exec_submit
+from atarg import submit
 
 class SubmitExecutorTest(unittest.TestCase):
     def test_extract_by_name(self):
@@ -15,5 +15,5 @@ class SubmitExecutorTest(unittest.TestCase):
         </html>
         '''
         self.assertEqual(
-                exec_submit.extract_by_name(html_text, 'test1'),
+                submit.extract_by_name(html_text, 'test1'),
                 '1')
