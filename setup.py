@@ -15,8 +15,7 @@ setup(
             'requests',
             'beautifulsoup4'
             ],
-        package_dir={'': 'atarg'},
-        packages=find_packages(where='atarg', exclude=('tests')),
+        packages=find_packages(exclude=('tests')),
         scripts=['scripts/atarg'],
         test_suite='tests',
         classifiers=[

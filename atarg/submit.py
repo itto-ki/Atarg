@@ -6,8 +6,8 @@ import webbrowser
 from bs4 import BeautifulSoup
 import requests
 
-import utils
-from languages import languages
+from atarg import utils
+from atarg.languages import languages
 
 ATCODER_LOGIN_URL = 'https://atcoder.jp/login'
 SETTING_FILE = os.environ['HOME'] + '/.atarg.json'

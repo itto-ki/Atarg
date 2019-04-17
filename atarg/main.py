@@ -1,8 +1,8 @@
 import argparse
 
-import utils
-from testcase import run_tests
-from submit import submit
+from atarg import utils
+from atarg.testcase import run_tests
+from atarg.submit import submit
 
 
 def parse_arguments():
