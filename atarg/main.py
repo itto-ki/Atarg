@@ -1,4 +1,5 @@
 import argparse
+import sys
 
 from atarg import utils
 from atarg.testcase import run_tests
@@ -21,13 +22,14 @@ def parse_arguments():
     parser.add_argument(
             'command',
             help='Commands or File to solve',
-            nargs='*')
+            nargs='+')
     return parser.parse_args()
 
 
 def main():
     args = parse_arguments()
     task = utils.translate_task(args.contest, args.contest_no, args.task)
+
     if args.submit:
         source_code_filename = args.command[0]
         submit(args.contest, args.contest_no, args.task, source_code_filename)
