@@ -13,7 +13,11 @@ usage: atarg [-h] [-s]
              command [command ...]]
 ```
 ### Run on test cases
+```
 atarg ABC 077 C ./C
+```
 
 ### Submit
+```
 atarg -s ABC 077 C C.rs
+```
