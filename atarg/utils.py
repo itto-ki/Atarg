@@ -60,17 +60,17 @@ def fetch_inputs_and_outputs(
     response = requests.get(url)
     soup = BeautifulSoup(response.content, 'html.parser')
     pre_list = soup.find_all('pre')
-    if contest == 'ABC':
+    if contest.lower() == 'abc':
         if 1 <= contest_no <= 41:
             return get_text(pre_list[1:])
         else:
             return split_half(get_text(pre_list))[1:]
-    elif contest == 'ARC':
+    elif contest.lower() == 'arc':
         if 1 <= contest_no <= 57:
             return get_text(pre_list[1:])
         else:
             return split_half(get_text(pre_list))[1:]
-    elif contest == 'AGC':
+    elif contest.lower() == 'agc':
         return split_half(get_text(pre_list))[1:]
 
 

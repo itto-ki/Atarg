@@ -11,6 +11,11 @@ class HTMLParserTest(unittest.TestCase):
                 ['1', 'ABC', '2', 'chokudai'])
         self.assertEqual(
                 utils.fetch_inputs_and_outputs(
+                    'https://beta.atcoder.jp/contests/abc020/tasks/abc020_a',
+                    'abc', 20),
+                ['1', 'ABC', '2', 'chokudai'])
+        self.assertEqual(
+                utils.fetch_inputs_and_outputs(
                     'https://beta.atcoder.jp/contests/abc001/tasks/abc001_1',
                     'ABC', 1),
                 ['15\r\n10', '5', '0\r\n0', '0', '5\r\n20', '-15'])
@@ -18,6 +23,11 @@ class HTMLParserTest(unittest.TestCase):
                 utils.fetch_inputs_and_outputs(
                     'https://beta.atcoder.jp/contests/arc057/tasks/arc057_a',
                     'ARC', 57),
+                ['1000 300', '4', '6 2', '25', '567876543 0', '1999432123457'])
+        self.assertEqual(
+                utils.fetch_inputs_and_outputs(
+                    'https://beta.atcoder.jp/contests/arc057/tasks/arc057_a',
+                    'arc', 57),
                 ['1000 300', '4', '6 2', '25', '567876543 0', '1999432123457'])
         self.assertEqual(
                 utils.fetch_inputs_and_outputs(
@@ -30,6 +40,13 @@ class HTMLParserTest(unittest.TestCase):
                     'AGC', 1),
                 ['2\r\n1 3 1 2', '3',
                     '5\r\n100 1 2 3 14 15 58 58 58 29', '135'])
+        self.assertEqual(
+                utils.fetch_inputs_and_outputs(
+                    'https://beta.atcoder.jp/contests/agc001/tasks/agc001_a',
+                    'agc', 1),
+                ['2\r\n1 3 1 2', '3',
+                    '5\r\n100 1 2 3 14 15 58 58 58 29', '135'])
+
 
     def test_translate_task(self):
         self.assertEqual(utils.translate_task('ABC', 19, 'A'), '1')
