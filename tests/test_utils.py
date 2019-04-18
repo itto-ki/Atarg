@@ -40,12 +40,24 @@ class HTMLParserTest(unittest.TestCase):
 
     def test_compose_task_url(self):
         self.assertEqual(
+                utils.compose_task_url('ABC', 20, 'A'),
+                'https://beta.atcoder.jp/contests/abc020/tasks/abc020_a')
+        self.assertEqual(
                 utils.compose_task_url('ABC', 20, 'a'),
+                'https://beta.atcoder.jp/contests/abc020/tasks/abc020_a')
+        self.assertEqual(
+                utils.compose_task_url('abc', 20, 'A'),
+                'https://beta.atcoder.jp/contests/abc020/tasks/abc020_a')
+        self.assertEqual(
+                utils.compose_task_url('abc', 20, 'a'),
                 'https://beta.atcoder.jp/contests/abc020/tasks/abc020_a')
 
     def test_compose_submit_url(self):
         self.assertEqual(
                 utils.compose_submit_url('ABC', 20),
+                'https://atcoder.jp/contests/abc020/submit')
+        self.assertEqual(
+                utils.compose_submit_url('abc', 20),
                 'https://atcoder.jp/contests/abc020/submit')
 
 

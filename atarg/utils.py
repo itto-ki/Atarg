@@ -97,12 +97,12 @@ def translate_task(contest: str, contest_no: int, task: str) -> str:
         タスク名(1, 2, 3, 4 または a, b, c, d)
     """
     translator = {'A': '1', 'B': '2', 'C': '3', 'D': '4'}
-    if contest == 'ABC':
+    if contest.lower() == 'abc':
         if 1 <= contest_no <= 19:
             return translator[task]
         else:
             return task.lower()
-    elif contest == 'ARC':
+    elif contest.lower() == 'arc':
         if 1 <= contest_no <= 34:
             return translator[task]
         else:
@@ -135,7 +135,7 @@ def compose_task_url(contest: str, contest_no: int, task: str) -> str:
                 + '{:03d}'.format(contest_no)\
                 + '/tasks/' + contest.lower()\
                 + '{:03d}'.format(contest_no)\
-                + '_' + task
+                + '_' + task.lower()
 
 def compose_submit_url(contest: str, contest_no: int) -> str:
     """

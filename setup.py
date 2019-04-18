@@ -5,7 +5,7 @@ root_dir = path.abspath(path.dirname(__file__))
 
 setup(
         name='atarg',
-        version='1.1.2',
+        version='1.1.3',
         description='Utility tools for AtCoder',
         author='Ittoh Kimura',
         author_email='kimura.itto.kd3@gmail.com',

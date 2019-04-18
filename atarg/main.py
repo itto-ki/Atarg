@@ -7,8 +7,8 @@ from atarg.submit import submit
 
 
 def parse_arguments():
-    CONTESTS = ['ABC', 'ARC', 'AGC']
-    TASKS = ['A', 'B', 'C', 'D']
+    CONTESTS = ['ABC', 'ARC', 'AGC', 'abc', 'arc', 'agc']
+    TASKS = ['A', 'B', 'C', 'D', 'a', 'b', 'c', 'd']
     parser = argparse.ArgumentParser(
             prog='atarg',
             description='Testing tool before submit for atcoder',

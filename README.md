@@ -9,7 +9,7 @@ pip install atarg
 ## Usage
 ```
 usage: atarg [-h] [-s]
-             {ABC,ARC,AGC} contest_no {A,B,C,D}
+             {ABC,ARC,AGC,abc,arc,agc} contest_no {A,B,C,D,a,b,c,d}
              command [command ...]]
 ```
 ### Run on test cases
